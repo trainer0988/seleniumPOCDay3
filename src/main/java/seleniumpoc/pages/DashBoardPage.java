@@ -21,6 +21,12 @@ public class DashBoardPage  extends Page{
 		return leftmenu;
 
 	}
+	
+	
+	public String geturlOfTheDashBoardPage()
+	{
+		return driver.getCurrentUrl();
+	}
 
 
 }

@@ -26,10 +26,9 @@ public class Page {
 	}
 
 	public void waitForSpinerToDisappear() {
-		long start = System.currentTimeMillis();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		wait.until(
-				ExpectedConditions.invisibilityOf(driver.findElement(By.xpath("//*[@class = 'oxd-loading-spinner']"))));
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(10));
+		wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.xpath("//*[@class = 'oxd-loading-spinner']"))));
 
 	}
 

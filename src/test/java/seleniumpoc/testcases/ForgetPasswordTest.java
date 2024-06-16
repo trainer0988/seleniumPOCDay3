@@ -7,7 +7,7 @@ import seleniumpoc.pages.LoginPage;
 
 public class ForgetPasswordTest extends BaseTest{
 	
-	@Test
+	@Test(priority = 1)
 	public void forgetpasswordFlowTest()
 	{
 		String expecetd_url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/requestPasswordResetCode";

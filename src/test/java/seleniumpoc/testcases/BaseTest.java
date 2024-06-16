@@ -36,11 +36,10 @@ public class BaseTest {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-			//driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		}
 	
 
-	@BeforeTest
+	@BeforeMethod
 	public void  launchApplication()
 	{
 		try {
@@ -54,7 +53,7 @@ public class BaseTest {
 	}
 	
 	
-	@AfterTest
+	@AfterMethod
 	public void closeApplication()
 	{
 		driver.close();

@@ -17,14 +17,20 @@ public class LeftMenu {
 	@FindBy(xpath = "//span[text() = 'PIM']")
 	WebElement pim;
 	
-	@FindBy(xpath = "//span[text() = 'Leave']")
-	WebElement leave;
+	@FindBy(xpath = "//span[text() = 'Directory']")
+	WebElement directory;
 	
 	
 	public PIMPage goToPIMPage()
 	{
 		pim.click();
 		return new PIMPage(driver);
+	}
+	
+	public DirectoryPage goToDirectoryPage()
+	{
+		directory.click();
+		return new DirectoryPage(driver);
 	}
 	
 

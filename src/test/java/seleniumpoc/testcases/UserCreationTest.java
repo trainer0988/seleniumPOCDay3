@@ -31,10 +31,28 @@ public class UserCreationTest extends BaseTest {
 		pimPage.addLoginDetails(userName, password);
 
 		System.out.println(pimPage.getToastMessage());
+		
 		Assert.assertEquals(pimPage.getToastMessage(), "Successfully Saved");
 
 		Assert.assertEquals(pimPage.getFirstName().split(" ")[0], firstName);
 
+	}
+	
+	@Test(priority = 2 ,dependsOnMethods = {"verifyUserCreationFlow"})
+	public void verifyCreatedUser()
+	{
+		DashBoardPage dp = loginPage.doLogin(userName, password);
+		Assert.assertEquals(dp.geturlOfTheDashBoardPage(), "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");
+		
+	}
+	
+	@Test(priority = 3)
+	public void verifyFacebookIntegration()
+	{
+		String expcetedUrl = "https://www.facebook.com/OrangeHRM/";
+		String currenturl = loginPage.navigateToFacebook();
+		Assert.assertEquals(currenturl, expcetedUrl);
+		
 	}
 
 }
