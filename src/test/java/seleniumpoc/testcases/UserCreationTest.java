@@ -1,5 +1,6 @@
 package seleniumpoc.testcases;
 
+import java.io.IOException;
 import java.util.Random;
 
 import org.testng.Assert;
@@ -21,7 +22,7 @@ public class UserCreationTest extends BaseTest {
 	String password = "localAdmin1" + a;
 
 	@Test(priority = 1)
-	public void verifyUserCreationFlow() throws InterruptedException {
+	public void verifyUserCreationFlow() throws InterruptedException, IOException {
 
 		DashBoardPage dashboardPage = loginPage.doLogin("Admin", "admin123");
 
@@ -31,27 +32,33 @@ public class UserCreationTest extends BaseTest {
 		pimPage.addLoginDetails(userName, password);
 
 		System.out.println(pimPage.getToastMessage());
-		
+
 		Assert.assertEquals(pimPage.getToastMessage(), "Successfully Saved");
 
 		Assert.assertEquals(pimPage.getFirstName().split(" ")[0], firstName);
+		
 
 	}
 	
 	@Test(priority = 2 ,dependsOnMethods = {"verifyUserCreationFlow"})
-	public void verifyCreatedUser()
+	public void verifyCreatedUser() throws IOException
 	{
+		System.out.println(driver);
 		DashBoardPage dp = loginPage.doLogin(userName, password);
-		Assert.assertEquals(dp.geturlOfTheDashBoardPage(), "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");
+		
+		Assert.assertEquals(dp.geturlOfTheDashBoardPage(), "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index/fail");
+		
 		
 	}
 	
 	@Test(priority = 3)
-	public void verifyFacebookIntegration()
+	public void verifyFacebookIntegration() throws IOException
 	{
 		String expcetedUrl = "https://www.facebook.com/OrangeHRM/";
 		String currenturl = loginPage.navigateToFacebook();
+		
 		Assert.assertEquals(currenturl, expcetedUrl);
+		
 		
 	}
 

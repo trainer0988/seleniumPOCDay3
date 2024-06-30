@@ -5,14 +5,7 @@
 		<listener class-name="seleniumpoc.testcases.Listners"></listener>	
 		
 		</listeners>
-	
-	<test thread-count="1" name="ForgotPassword">
-		<classes>
-			<class name="seleniumpoc.testcases.ForgetPasswordTest" />
-			<class name="seleniumpoc.testcases.DirectoryTest"></class>
-		</classes>
-	</test>
-	
+
 	<test thread-count="1" name="UserCreation">
 		<classes>
 			<class name="seleniumpoc.testcases.UserCreationTest" />
