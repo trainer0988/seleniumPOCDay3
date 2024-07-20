@@ -28,6 +28,7 @@ public class BaseTest {
 	LoginPage loginPage;
 	public void initalizeDriver() throws IOException
 	{
+		//added comment to check cicd
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\globalData.properties");
 		Properties prop = new Properties();
 		prop.load(fis);
