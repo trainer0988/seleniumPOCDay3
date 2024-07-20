@@ -8,7 +8,7 @@
 
 	<test thread-count="1" name="UserCreation">
 		<classes>
-			<class name="seleniumpoc.testcases.UserCreationTest" />
+			<class name="seleniumpoc.testcases.ForgetPasswordTest" />
 		</classes>
 	</test> <!--
 	Test -->

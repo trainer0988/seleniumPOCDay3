@@ -38,6 +38,8 @@ public class DirectoryPage extends Page {
 	
 	public void selectJobTitle(String jobTitleToBeSelected)
 	{
+		waitForSpinerToDisappear();
+		
 		jobTitle.click();
 		
 		  List<WebElement> listOfWebElementElemenet = jobTitlelist.findElements(By.tagName("span"));
@@ -51,6 +53,7 @@ public class DirectoryPage extends Page {
 			{
 				System.out.println(webElement.getText());
 				webElement.click();
+				break;
 			}
 		}
 		
@@ -61,6 +64,7 @@ public class DirectoryPage extends Page {
 	
 	public String getSearchResult()
 	{
+		waitForSpinerToDisappear();
 		return searchResult.getText();
 	}
 	

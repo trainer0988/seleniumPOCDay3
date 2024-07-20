@@ -46,7 +46,7 @@ public class UserCreationTest extends BaseTest {
 		System.out.println(driver);
 		DashBoardPage dp = loginPage.doLogin(userName, password);
 		
-		Assert.assertEquals(dp.geturlOfTheDashBoardPage(), "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index/fail");
+		Assert.assertEquals(dp.geturlOfTheDashBoardPage(), "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");
 		
 		
 	}

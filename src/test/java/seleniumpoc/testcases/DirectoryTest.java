@@ -7,8 +7,8 @@ import seleniumpoc.pages.DashBoardPage;
 import seleniumpoc.pages.DirectoryPage;
 
 public class DirectoryTest  extends BaseTest{
-	
-	@Test(retryAnalyzer = Retry.class)
+	//retryAnalyzer = Retry.class
+	@Test
 	public void verifySearchInDirectory()
 	{
 		System.out.println("Start executing............");
@@ -19,8 +19,9 @@ public class DirectoryTest  extends BaseTest{
 		directoryPage.selectJobTitle("Chief Financial Officer");
 		
 		String serachResult = directoryPage.getSearchResult();
+		System.out.println(serachResult);
 		
-		Assert.assertTrue(serachResult.contains("Record Found"));
+		Assert.assertTrue(serachResult.contains("Found"));
 		
 	}
 

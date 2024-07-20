@@ -11,6 +11,7 @@ public class ForgetPasswordTest extends BaseTest{
 	public void forgetpasswordFlowTest()
 	{
 		String expecetd_url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/requestPasswordResetCode";
+		//https://opensource-demo.orangehrmlive.com/web/index.php/auth/requestPasswordResetCode
 		String new_url = loginPage.getForgetOasswordUrl();
 		Assert.assertEquals(new_url, expecetd_url);	
 	}

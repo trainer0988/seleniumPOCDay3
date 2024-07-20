@@ -57,8 +57,8 @@ public class LoginPage extends Page{
 	public String getForgetOasswordUrl()
 	{
 		forgotPassword.click();
+		
 		String new_url = driver.getCurrentUrl();
-		cancel.click();
 		return new_url;
 		
 	}
